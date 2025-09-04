@@ -1,7 +1,7 @@
 import whisper
 
 
-def transcribe_audio(path, model_size='large', language=None):
+def transcribe_audio(path, model_size='small', language=None):
     model = whisper.load_model(model_size)
     kwargs = {'fp16': False}
     if language:
@@ -25,3 +25,4 @@ if __name__ == "__main__":
         translation = translate_to_english(WAV_FILE)
         print('Translation to English:')
         print(translation)
+
