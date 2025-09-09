@@ -6,8 +6,7 @@ from products import products
 from report_format import report_format
 
 # Initialize Groq client
-client = Groq(
-    api_key="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")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 # Create the system message with products and format
 system_message = f"""
@@ -45,3 +44,4 @@ def run_report(conversation_text):
     except Exception:
         report_dict = json.loads(report_str)
     return report_dict
+
